@@ -66,6 +66,29 @@ function putMovie() {
     - Configure the function below as the onload event handler
     - Send the movie data as JSON
   */
+    const movie = getMovie(); 
+    const id = movie.imdbID;
+
+    // 2. Per Fetch (PUT) an den Server schicken
+    fetch(`/movies/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(movie) // Das Objekt in Text umwandeln
+    })
+    .then(response => {
+        if (response.ok) {
+            // 3. Wenn erfolgreich gespeichert -> Zurück zur Übersicht
+            window.location.href = "index.html";
+        } else {
+            alert("Fehler beim Speichern!");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
 
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
