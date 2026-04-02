@@ -1,7 +1,9 @@
 /* Task 1.1. Add your movie data here 
    and export it so it's available in server.js */
-   const movies = [
-    {
+   
+   const movies = {
+    "tt0120737": {
+        "imdbID": "tt0120737",
     "Title": "The Lord of the Rings: The Fellowship of the Ring",
     "Released": "2001-12-19",            // Umgeformt von "19 Dec 2001" (ISO 8601)
     "Runtime": 178,                      // Nummer statt "178 min"
@@ -15,7 +17,8 @@
     "imdbRating": 8.9                    // Als Nummer
 },
 
-{
+   "tt0172495": {
+        "imdbID": "tt0172495",
     "Title": "Gladiator",
     "Released": "2000-05-05",             // Umgeformt von "05 May 2000"
     "Runtime": 155,                       // Nummer statt "155 min"
@@ -29,7 +32,8 @@
     "imdbRating": 8.5                     // Als Nummer
 },
 
-{
+   "tt0112573": {
+        "imdbID": "tt0112573",
     "Title": "Braveheart",
     "Released": "1995-05-24",             // Von "24 May 1995"
     "Runtime": 178,                       // Nummer statt "178 min"
@@ -42,6 +46,7 @@
     "Metascore": 68,                      // Nummer
     "imdbRating": 8.3                     // Nummer
 }
+   };
 
- ];
+
  module.exports = movies; // Das hier macht die Daten für andere Dateien sichtbar

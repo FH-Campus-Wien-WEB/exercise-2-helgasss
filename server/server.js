@@ -13,9 +13,10 @@ app.use(express.static(path.join(__dirname, 'files')));
 
 // Configure a 'get' endpoint for all movies..
 app.get('/movies', function (req, res) {
-  /* Task 1.2. Remove the line below and eturn the movies from 
+  /* Task 1.2. Remove the line below and return the movies from 
      the model as an array */
-  res.json(movieModel);
+  // Wandelt das Objekt { "id": {movie} } in ein flaches Array [{movie}] um
+    res.json(Object.values(movieModel));
 })
 
 // Configure a 'get' endpoint for a specific movie

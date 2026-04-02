@@ -9,6 +9,7 @@ window.onload = function () {
            and include a non-functional 'Edit' button
            to pass this test */
         const movieArticle = document.createElement("article");
+        movieArticle.id = movie.imdbID;
     
     // NEU: Der Edit-Button
     const editButton = document.createElement("a"); // Ein Link, der wie ein Button aussieht
