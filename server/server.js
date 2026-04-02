@@ -23,8 +23,15 @@ app.get('/movies', function (req, res) {
 app.get('/movies/:imdbID', function (req, res) {
   /* Task 2.1. Remove the line below and add the 
     functionality here */
-  res.sendStatus(404)
-})
+ const id = req.params.imdbID; // Das ist die ID aus der URL
+    const movie = movieModel[id]; // Wir suchen im Objekt direkt nach dem Key
+
+    if (movie) {
+        res.json(movie); // Film gefunden -> als JSON senden
+    } else {
+        res.sendStatus(404); // Film nicht da -> 404 Fehler
+    }
+  });
 
 /* Task 3.1 and 3.2.
    - Add a new PUT endpoint
